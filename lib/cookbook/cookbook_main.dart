@@ -5,6 +5,7 @@ class CookbookMain extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.indigo,
+      height: 600,
     );
   }
 }

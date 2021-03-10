@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
 
 class Contents extends StatelessWidget {
+  final bool contentsAcikMi;
+
+  const Contents({Key key, @required this.contentsAcikMi}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.blueAccent,
-      child: ListView.builder(
-        itemCount: contents['main']['contents'].length,
-        itemBuilder: (itemBuilder, i) {
-          return ListTile(
-            title: Text("${i + 1}. ${contents['main']['contents'][i]}"),
-          );
-        },
+      child: Column(
+        children: [
+          for (String title in contents['main']['contents'])
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  if (contentsAcikMi) Icon(Icons.circle),
+                  Text(title),
+                ],
+              ),
+            ),
+        ],
       ),
     );
   }
@@ -19,7 +29,28 @@ class Contents extends StatelessWidget {
 
 var contents = {
   'main': {
-    'contents': ['Animasyon', 'Tasarım', 'Efektler', 'Formlar'],
-    'onClick': []
+    'contents': [
+      'Animasyon',
+      'Tasarım',
+      'Efektler',
+      'Formlar',
+      'Animasyon',
+      'Tasarım',
+      'Efektler',
+      'Formlar',
+      'Animasyon',
+      'Tasarım',
+      'Efektler',
+      'Formlar',
+      'Animasyon',
+      'Tasarım',
+      'Efektler',
+      'Formlar',
+      'Animasyon',
+      'Tasarım',
+      'Efektler',
+      'Formlar'
+    ],
+    'onClick': ['animation']
   }
 };
