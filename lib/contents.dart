@@ -6,13 +6,20 @@ class Contents extends StatelessWidget {
     return Container(
       color: Colors.blueAccent,
       child: ListView.builder(
-        itemCount: 10,
+        itemCount: contents['main']['contents'].length,
         itemBuilder: (itemBuilder, i) {
           return ListTile(
-            title: Text("İçerik no: ${i + 1}"),
+            title: Text("${i + 1}. ${contents['main']['contents'][i]}"),
           );
         },
       ),
     );
   }
 }
+
+var contents = {
+  'main': {
+    'contents': ['Animasyon', 'Tasarım', 'Efektler', 'Formlar'],
+    'onClick': []
+  }
+};

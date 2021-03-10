@@ -7,7 +7,7 @@ class Anasayfa extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double genislik = MediaQuery.of(context).size.width;
-
+    final bool drawerAcilsinMi = genislik < 600;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -23,7 +23,7 @@ class Anasayfa extends StatelessWidget {
       ),
       body: Row(
         children: [
-          if (genislik > 500) Expanded(child: LeftMenu()),
+          if (!drawerAcilsinMi) Expanded(child: LeftMenu()),
           Expanded(
             flex: 2,
             child: Column(
@@ -37,7 +37,7 @@ class Anasayfa extends StatelessWidget {
           if (genislik >= 700) Expanded(child: Contents()),
         ],
       ),
-      drawer: genislik > 500 ? null : Drawer(child: LeftMenu()),
+      drawer: drawerAcilsinMi ? Drawer(child: LeftMenu()) : null,
     );
   }
 }
