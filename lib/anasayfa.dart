@@ -35,12 +35,19 @@ class Anasayfa extends StatelessWidget {
           Expanded(
             flex: 2,
             child: Scrollbar(
-              child: ListView(
-                children: [
-                  Text("başlık menü"),
-                  if (genislik < 700) Contents(contentsAcikMi: contentsAcikMi),
-                  CookbookMain(),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: ListView(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Flutter Tarif Kitabı",
+                          style: Theme.of(context).textTheme.headline3),
+                    ),
+                    if (genislik < 700) Contents(contentsAcikMi: contentsAcikMi),
+                    CookbookMain(),
+                  ],
+                ),
               ),
             ),
           ),
