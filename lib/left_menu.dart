@@ -21,13 +21,62 @@ class LeftMenu extends StatelessWidget {
                       ListTile(title: Text("5. Learn more")),
                     ],
                   ),
-                  ExpansionTile(title: Text("Samples & tutoriels")),
-                  ExpansionTile(title: Text("Development")),
-                  ExpansionTile(title: Text("Testing & debugging")),
-                  ExpansionTile(title: Text("Performance & optimization")),
-                  ExpansionTile(title: Text("Deployment")),
-                  ExpansionTile(title: Text("Resources")),
-                  ExpansionTile(title: Text("Reference")),
+                  ExpansionTile(
+                    title: Text("Samples & tutoriels"),
+                    children: [
+                      ListTile(title: Text("1")),
+                      ListTile(title: Text("2")),
+                      ListTile(title: Text("3")),
+                    ],
+                  ),
+                  ExpansionTile(
+                    title: Text("Development"),
+                    children: [
+                      ListTile(title: Text("1")),
+                      ListTile(title: Text("2")),
+                      ListTile(title: Text("3")),
+                    ],
+                  ),
+                  ExpansionTile(
+                    title: Text("Testing & debugging"),
+                    children: [
+                      ListTile(title: Text("1")),
+                      ListTile(title: Text("2")),
+                      ListTile(title: Text("3")),
+                    ],
+                  ),
+                  ExpansionTile(
+                    title: Text("Performance & optimization"),
+                    children: [
+                      ListTile(title: Text("1")),
+                      ListTile(title: Text("2")),
+                      ListTile(title: Text("3")),
+                    ],
+                  ),
+                  ExpansionTile(
+                    title: Text("Deployment"),
+                    children: [
+                      ListTile(title: Text("1")),
+                      ListTile(title: Text("2")),
+                      ListTile(title: Text("3")),
+                    ],
+                  ),
+                  ExpansionTile(
+                    title: Text("Resources"),
+                    children: [
+                      ListTile(title: Text("1")),
+                      ListTile(title: Text("2")),
+                      ListTile(title: Text("3")),
+                    ],
+                  ),
+                  ExpansionTile(
+                    title: Text("Reference"),
+                    children: [
+                      ListTile(title: Text("1")),
+                      ListTile(title: Text("2")),
+                      ListTile(title: Text("3")),
+                    ],
+                  ),
                 ],
               ),
             )
