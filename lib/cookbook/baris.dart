@@ -43,7 +43,7 @@ class MaviAltBaslikRow extends StatelessWidget {
 
 ////////////////////////////////////////////Bir Ana başlık ve alt Mavi alt başlıkların birleştiği yer////////////////////////////////////////////////////////////////////////////////////////////////
 class AltBasliklar extends StatelessWidget {
-  List<MaviAltBaslikRow> rowBasliklar = [];
+  final List<MaviAltBaslikRow> rowBasliklar;
   final String anaBaslik;
 
   AltBasliklar({this.rowBasliklar, this.anaBaslik});
@@ -61,7 +61,8 @@ class AltBasliklar extends StatelessWidget {
           margin: EdgeInsets.all(30),
           child: Column(
             children: [
-              for (int i = 0; rowBasliklar.length > i; i++) rowBasliklar[i]
+              for (int i = 0; i < (rowBasliklar ?? []).length; i++)
+                rowBasliklar[i]
             ],
           ),
         )
