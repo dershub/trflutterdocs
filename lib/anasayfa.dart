@@ -39,6 +39,7 @@ class Anasayfa extends StatelessWidget {
           Expanded(
             flex: 2,
             child: Scrollbar(
+<<<<<<< HEAD
               child: ListView(
                 children: [
                   Column(
@@ -69,6 +70,21 @@ class Anasayfa extends StatelessWidget {
                   if (contentsAcikMi) Contents(contentsAcikMi: contentsAcikMi),
                   CookbookMain(),
                 ],
+=======
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: ListView(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Flutter Tarif Kitabı",
+                          style: Theme.of(context).textTheme.headline3),
+                    ),
+                    if (genislik < 700) Contents(contentsAcikMi: contentsAcikMi),
+                    CookbookMain(),
+                  ],
+                ),
+>>>>>>> d31b0ca118c2a063af621dcba9648a5e20497ae0
               ),
             ),
           ),
