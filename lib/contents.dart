@@ -23,13 +23,13 @@ class Contents extends StatelessWidget {
         ),
         for (ContentsTitleItem content in contents)
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 5),
             child: Row(
               children: [
                 if (contentsAcikMi)
                   Icon(
                     Icons.circle,
-                    size: 8,
+                    size: 7,
                     color: Colors.black87,
                   ),
                 SizedBox(width: 5),
