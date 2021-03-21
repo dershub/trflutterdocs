@@ -1,7 +1,11 @@
-import 'package:docs/contents.dart';
-import 'package:docs/cookbook/cookbook_main.dart';
-import 'package:docs/left_menu.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'anasayfa/baslik_alti.dart';
+import 'anasayfa/baslik_ve_icons.dart';
+import 'contents.dart';
+import 'cookbook/baris.dart';
+import 'left_menu.dart';
 
 const List a1 = const [1, 2, 3];
 const List a2 = const [1, 2, 3];
@@ -18,6 +22,7 @@ class Anasayfa extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.blue),
         title: Row(
           children: [
             SizedBox(
@@ -37,14 +42,38 @@ class Anasayfa extends StatelessWidget {
             child: Scrollbar(
               child: ListView(
                 children: [
-                  Text("başlık menü"),
-                  if (genislik < 700) Contents(contentsAcikMi: contentsAcikMi),
+                  Column(
+                    children: [
+                      BasliklVeIcons(),
+                      BaslikAlti(),
+                    ],
+                  ),
+                  /////CookBook ana başlığının yazılarının olduğu eyr
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 35),
+                    child: RichText(
+                      text: TextSpan(
+                        style: GoogleFonts.roboto(
+                          fontSize: 16,
+                          color: Color(0xFF4A4A4A),
+                        ),
+                        text:
+                            'This cookbook contains recipes that demonstrate how to solve common problems while writing Flutter apps. Each recipe is self-',
+                        children: <TextSpan>[
+                          TextSpan(
+                              text:
+                                  ' contained and can be used as a reference to help you build up an application.'),
+                        ],
+                      ),
+                    ),
+                  ),
+                  if (contentsAcikMi) Contents(contentsAcikMi: contentsAcikMi),
                   CookbookMain(),
                 ],
               ),
             ),
           ),
-          if (genislik >= 700)
+          if (!contentsAcikMi)
             Expanded(
               child: Scrollbar(
                 child: SingleChildScrollView(
